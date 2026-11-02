@@ -1,0 +1,39 @@
+THAI LIVING ESTATE — CATALOGUE + ADMIN PANEL
+==============================================
+
+This package adds a property catalogue managed from /admin.
+The catalogue data is stored in data/properties.json; photos uploaded in the admin
+are stored in /uploads.
+
+IMPORTANT: the admin panel is prepared, but it will not authenticate or publish
+changes until Netlify Identity and Git Gateway are enabled and the site is connected
+to a GitHub repository.
+
+ONE-TIME SETUP
+--------------
+1. Put ALL files from this package into the root of the GitHub repository used by
+   the Netlify site. Keep the folder structure (admin/, data/, uploads/).
+2. In Netlify, open your site:
+   - Site configuration / Identity (or Integrations, depending on UI) and enable
+     Netlify Identity.
+   - Set registration to Invite only.
+   - Enable Git Gateway.
+   - Invite your own email address as an Identity user and accept the invitation.
+3. Make sure the Netlify site is linked to the same GitHub repository and deploy
+   the updated main branch.
+4. Open https://YOUR-SITE.netlify.app/admin/ and log in.
+
+AFTER SETUP
+-----------
+- Add or edit properties, price, area, size, ownership, description and photo.
+- Turn "Show on website" off to hide a listing without deleting it.
+- Save/publish; Netlify will deploy the changes to the public website.
+
+NOTES
+-----
+- The two initial listings are examples from previously discussed offers. Their
+  availability, price, exact unit and ownership must be reconfirmed before publication.
+- The WhatsApp contact in the website remains the number already present in the
+  current site package. Change it in index.html if needed.
+- This is a static website + Git-based CMS. It is not an independent database or
+  customer-lead CRM; form/lead management can be added separately.

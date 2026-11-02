@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+locale: "en"
+
+collections:
+  - name: "catalogue"
+    label: "Property catalogue"
+    files:
+      - name: "properties"
+        label: "Properties"
+        file: "data/properties.json"
+        format: "json"
+        fields:
+          - label: "Properties"
+            name: "properties"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.area}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Area", name: "area", widget: "select", options: ["Layan", "Bang Tao", "Laguna", "Kamala", "Rawai", "Other"] }
+              - { label: "Price (THB)", name: "price", widget: "number", value_type: "int", min: 0 }
+              - { label: "Area (m²)", name: "size", widget: "number", value_type: "int", min: 0 }
+              - { label: "Ownership", name: "ownership", widget: "string", required: false }
+              - { label: "View / type", name: "view", widget: "string", required: false }
+              - { label: "Availability status", name: "status", widget: "string", default: "Availability to be confirmed" }
+              - { label: "Short description", name: "description", widget: "text" }
+              - { label: "Main photo", name: "image", widget: "image" }
+              - { label: "Show on website", name: "published", widget: "boolean", default: true }

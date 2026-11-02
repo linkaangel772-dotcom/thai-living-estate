@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Thai Living Estate — independent property selection in Bang Tao, Laguna and Layan, Phuket. Russian and English support.">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Thai Living Estate | Phuket Property">
+<meta property="og:description" content="Find your place in Phuket. Property selection for living and investment.">
+<meta property="og:type" content="website">
+<title>Thai Living Estate | Phuket Real Estate</title>
+<style>
+:root{--ink:#17343a;--sand:#ddc69d;--cream:#f7f5ef;--muted:#69777a;--white:#fff;--line:#e8e2d7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;background:rgba(247,245,239,.97);backdrop-filter:blur(12px);z-index:20;border-bottom:1px solid var(--line)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-size:17px;font-weight:850;letter-spacing:2px;line-height:1.25}.brand small{display:block;font-size:9px;letter-spacing:3.5px;color:var(--muted);font-weight:700;margin-top:5px}
+nav{display:flex;gap:22px;font-size:13px;font-weight:700}.tools{display:flex;gap:9px;align-items:center}
+button,.btn{border:0;cursor:pointer;border-radius:999px;padding:12px 19px;font-weight:750;background:var(--ink);color:white;display:inline-flex;align-items:center;justify-content:center}
+.lang{background:transparent;color:var(--ink);border:1px solid #c9c5bb;padding:8px 13px}.btn:hover,button:hover{transform:translateY(-1px);opacity:.94}
+.hero{min-height:650px;display:flex;align-items:center;color:white;background:linear-gradient(90deg,rgba(9,34,39,.82),rgba(9,34,39,.30)),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero-content{max-width:700px;padding:88px 0}.eyebrow{color:var(--sand);font-size:11px;letter-spacing:3px;font-weight:850;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.03;margin:18px 0;font-weight:750;letter-spacing:-2.5px}
+.hero p{font-size:clamp(16px,2vw,20px);max-width:600px;color:#f1eee7}.hero .btn{margin-top:18px;background:var(--sand);color:var(--ink);padding:15px 24px}
+.trustline{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;color:#f3eee4;font-size:12px;font-weight:650;letter-spacing:.4px}
+section{padding:82px 0}.section-head{max-width:730px;margin-bottom:34px}.section-head h2{font-size:clamp(30px,4vw,45px);line-height:1.12;margin:10px 0}
+.section-head p,.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(23,51,58,.06)}
+.card img{width:100%;height:235px;object-fit:cover;display:block}.card-body{padding:22px}.card h3{margin:0 0 8px;font-size:22px}
+.featured-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.property-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 32px rgba(23,51,58,.08)}.property-card img{width:100%;height:280px;object-fit:cover;display:block}.property-body{padding:24px}.property-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.status{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:850;color:#876f46;background:#f3eee3;border-radius:30px;padding:7px 11px}.price{font-size:26px;font-weight:850;margin:14px 0 4px}.facts{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0 18px}.facts span{background:#f4f2ec;border-radius:8px;padding:7px 10px;font-size:12px;font-weight:700}.property-body .btn{margin-top:8px}.disclaimer{font-size:12px;color:var(--muted);margin-top:18px}
+@media(max-width:850px){.featured-grid{grid-template-columns:1fr}.property-card img{height:230px}}
+.tag{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#8b7651;font-weight:850}
+.pill{display:inline-block;border:1px solid #e6dece;border-radius:30px;padding:5px 11px;font-size:11px;color:#6e654f;margin:5px 5px 0 0}
+.band{background:#eae7de}.service{padding:25px;background:white;border-radius:16px}.service h3{margin:8px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:23px;border:1px solid #ddd6c8;border-radius:16px;background:rgba(255,255,255,.55)}
+.step b{font-size:12px;letter-spacing:2px;color:#967f57}.step h3{margin:7px 0}
+.investment{background:#fff}.investment-box{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center;background:#f2efe7;padding:34px;border-radius:22px}
+.investment-box h3{font-size:27px;line-height:1.2;margin:8px 0}.investment-box ul{padding-left:20px;color:var(--muted)}
+.contact{background:var(--ink);color:white}.contact .section-head p{color:#d1d9d7}.contact-box{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:28px;border:1px solid #557078;border-radius:18px}
+.contact .btn{background:var(--sand);color:var(--ink)}.contact .notice{font-size:11px;color:#b9c6c6;margin-top:22px;max-width:850px}
+footer{padding:28px 0;color:var(--muted);font-size:13px}.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.mobile-cta{display:none}
+@media(max-width:850px){nav{display:none}.nav{min-height:70px}.brand{font-size:15px}.grid,.steps{grid-template-columns:1fr}.hero{min-height:610px}.hero-content{padding:72px 0}.hero h1{letter-spacing:-1.5px}section{padding:62px 0}.card img{height:220px}.investment-box{grid-template-columns:1fr;padding:25px}.tools .btn{padding:10px 14px}.mobile-cta{display:block;position:fixed;bottom:12px;left:4%;width:92%;z-index:19;text-align:center;box-shadow:0 8px 30px #102b3050}.contact{padding-bottom:100px}}
+
+.catalog-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px}
+.filter-btn{background:#fff;color:var(--ink);border:1px solid var(--line);padding:10px 17px;font-size:13px;cursor:pointer}
+.filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.property-card[hidden]{display:none}
+.catalog-empty{padding:24px;background:#fff;border-radius:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#">THAI LIVING ESTATE<small>PHUKET · THAILAND</small></a>
+<nav><a href="#areas" data-en="Areas" data-ru="Районы">Areas</a><a href="#properties" data-en="Properties" data-ru="Объекты">Properties</a><a href="#services" data-en="Services" data-ru="Услуги">Services</a><a href="#buying" data-en="Buyer guide" data-ru="Покупка">Buyer guide</a><a href="#contact" data-en="Contact" data-ru="Контакты">Contact</a></nav>
+<div class="tools"><button class="lang" id="lang" type="button">RU</button><a class="btn" href="https://wa.me/79286628388" target="_blank" rel="noopener">WhatsApp</a></div>
+</div></header>
+<main>
+<section class="hero"><div class="wrap"><div class="hero-content">
+<div class="eyebrow" data-en="Property · Lifestyle · Phuket" data-ru="Недвижимость · Образ жизни · Пхукет">Property · Lifestyle · Phuket</div>
+<h1 data-en="Find your place in Phuket." data-ru="Найдите своё место на Пхукете.">Find your place in Phuket.</h1>
+<p data-en="Explore apartments, residences and villas in Bang Tao, Laguna and Layan with personal guidance in English or Russian." data-ru="Подбирайте квартиры, апартаменты и виллы в Банг Тао, Лагуне и Лаяне с персональной поддержкой на русском или английском языке.">Explore apartments, residences and villas in Bang Tao, Laguna and Layan with personal guidance in English or Russian.</p>
+<a class="btn" href="https://wa.me/79286628388?text=Hello%2C%20I%27m%20interested%20in%20property%20in%20Phuket." target="_blank" rel="noopener" data-en="Request a property selection" data-ru="Запросить подбор недвижимости">Request a property selection</a>
+<div class="trustline"><span data-en="BANG TAO · LAGUNA · LAYAN" data-ru="БАНГ ТАО · ЛАГУНА · ЛАЯН">BANG TAO · LAGUNA · LAYAN</span><span data-en="RUSSIAN & ENGLISH" data-ru="РУССКИЙ И АНГЛИЙСКИЙ">RUSSIAN & ENGLISH</span><span data-en="PERSONAL PROPERTY SEARCH" data-ru="ПЕРСОНАЛЬНЫЙ ПОДБОР">PERSONAL PROPERTY SEARCH</span></div>
+</div></div></section>
+<section id="areas"><div class="wrap">
+<div class="section-head"><div class="eyebrow" data-en="Explore Phuket" data-ru="Откройте Пхукет">Explore Phuket</div><h2 data-en="Three areas. Different ways to live." data-ru="Три района — три разных образа жизни.">Three areas. Different ways to live.</h2><p data-en="Compare the atmosphere, surroundings and property options before choosing your location." data-ru="Сравните атмосферу, окружение и варианты недвижимости, прежде чем выбирать локацию.">Compare the atmosphere, surroundings and property options before choosing your location.</p></div>
+<div class="grid">
+<article class="card"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Tropical beach"><div class="card-body"><div class="tag">01 · PHUKET</div><h3>Bang Tao</h3><p class="muted" data-en="A lively coastal area with beach clubs, restaurants, residences and everyday amenities." data-ru="Активная прибрежная локация с пляжными клубами, ресторанами, жилыми комплексами и инфраструктурой.">A lively coastal area with beach clubs, restaurants, residences and everyday amenities.</p><span class="pill">Lifestyle</span><span class="pill">Residences</span></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Modern tropical residence"><div class="card-body"><div class="tag">02 · PHUKET</div><h3>Laguna</h3><p class="muted" data-en="A resort-oriented community with leisure facilities, green spaces and established surroundings." data-ru="Курортная среда с инфраструктурой для отдыха, зелёными территориями и сформированным окружением.">A resort-oriented community with leisure facilities, green spaces and established surroundings.</p><span class="pill">Resort living</span><span class="pill">Convenience</span></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Contemporary villa"><div class="card-body"><div class="tag">03 · PHUKET</div><h3>Layan</h3><p class="muted" data-en="A quieter coastal setting with private residences and resort-style developments." data-ru="Более спокойная прибрежная атмосфера, частные резиденции и курортные проекты.">A quieter coastal setting with private residences and resort-style developments.</p><span class="pill">Quiet setting</span><span class="pill">Villas & condos</span></div></article>
+</div></div></section>
+<section id="properties"><div class="wrap">
+<div class="section-head"><div class="eyebrow" data-en="Property catalogue" data-ru="Каталог недвижимости">Property catalogue</div><h2 data-en="Selected properties in Phuket." data-ru="Подобранные объекты на Пхукете.">Selected properties in Phuket.</h2><p data-en="Explore selected opportunities in Layan and Bang Tao. Ask us to confirm current availability, final price and ownership details before making a decision." data-ru="Посмотрите варианты в Лаяне и Банг Тао. Перед принятием решения запросите подтверждение актуального наличия, итоговой цены и условий собственности.">Explore selected opportunities in Layan and Bang Tao. Ask us to confirm current availability, final price and ownership details before making a decision.</p></div>
+
+<div class="catalog-tools" role="group" aria-label="Filter properties">
+<button class="filter-btn active" type="button" data-filter="all" data-en="All properties" data-ru="Все объекты">All properties</button>
+<button class="filter-btn" type="button" data-filter="layan" data-en="Layan" data-ru="Лаян">Layan</button>
+<button class="filter-btn" type="button" data-filter="bangtao" data-en="Bang Tao" data-ru="Банг Тао">Bang Tao</button>
+</div>
+<div class="featured-grid" id="property-list"><p class="muted">Loading selected properties…</p></div><p class="disclaimer" data-en="*Ownership type, unit specifications, price and availability are subject to documentary confirmation for the exact unit. Images are illustrative and may not depict the listed apartment." data-ru="*Форму собственности, характеристики, цену и наличие необходимо подтвердить документально для конкретного юнита. Фотографии иллюстративные и могут не изображать именно этот объект.">*Ownership type, unit specifications, price and availability are subject to documentary confirmation for the exact unit. Images are illustrative and may not depict the listed apartment.</p>
+</div></section>
+<section class="band" id="services"><div class="wrap"><div class="section-head"><div class="eyebrow" data-en="How we help" data-ru="Чем мы помогаем">How we help</div><h2 data-en="A clear, considered property search." data-ru="Продуманный и понятный подбор недвижимости.">A clear, considered property search.</h2><p data-en="A personal approach from the first conversation to your next steps." data-ru="Персональный подход — от первого разговора до следующих шагов к покупке.">A personal approach from the first conversation to your next steps.</p></div>
+<div class="grid"><div class="service"><div class="tag">01</div><h3 data-en="Property selection" data-ru="Подбор недвижимости">Property selection</h3><p class="muted" data-en="Options matched to your budget, preferred area and purchase purpose." data-ru="Варианты с учётом бюджета, района и цели покупки.">Options matched to your budget, preferred area and purchase purpose.</p></div>
+<div class="service"><div class="tag">02</div><h3 data-en="Project comparison" data-ru="Сравнение проектов">Project comparison</h3><p class="muted" data-en="Compare location, developer information, ownership type and payment schedule." data-ru="Сравнение локации, информации о застройщике, формы собственности и графика платежей.">Compare location, developer information, ownership type and payment schedule.</p></div>
+<div class="service"><div class="tag">03</div><h3 data-en="Purchase coordination" data-ru="Координация покупки">Purchase coordination</h3><p class="muted" data-en="Communication support with developers and independent local legal advisers." data-ru="Помощь в коммуникации с застройщиками и независимыми местными юристами.">Communication support with developers and independent local legal advisers.</p></div></div></div></section>
+<section class="investment"><div class="wrap investment-box"><div><div class="eyebrow" data-en="Buy with clarity" data-ru="Покупайте осознанно">Buy with clarity</div><h3 data-en="Understand the details before you decide." data-ru="Разберитесь в деталях до принятия решения.">Understand the details before you decide.</h3><p class="muted" data-en="Freehold, leasehold, rental management, ongoing costs and resale potential all deserve careful review." data-ru="Freehold, Leasehold, управление арендой, текущие расходы и потенциал перепродажи требуют внимательной проверки.">Freehold, leasehold, rental management, ongoing costs and resale potential all deserve careful review.</p></div><ul><li data-en="Clarify ownership structure and title details" data-ru="Проверить форму собственности и документы на объект">Clarify ownership structure and title details</li><li data-en="Review developer, contract and payment terms" data-ru="Изучить застройщика, договор и график платежей">Review developer, contract and payment terms</li><li data-en="Assess rental assumptions and all costs" data-ru="Оценить предположения по аренде и все расходы">Assess rental assumptions and all costs</li><li data-en="Discuss resale considerations and liquidity" data-ru="Обсудить перепродажу и ликвидность">Discuss resale considerations and liquidity</li></ul></div></section>
+<section class="band" id="buying"><div class="wrap"><div class="section-head"><div class="eyebrow" data-en="Buyer guide" data-ru="Путь покупателя">Buyer guide</div><h2 data-en="From first idea to informed next step." data-ru="От первой идеи к взвешенному решению.">From first idea to informed next step.</h2></div>
+<div class="steps"><div class="step"><b>01</b><h3 data-en="Tell us your goals" data-ru="Расскажите о целях">Tell us your goals</h3><p class="muted" data-en="Budget, preferred area, timeline and whether you plan to live or invest." data-ru="Бюджет, район, сроки и цель — для жизни или инвестиций.">Budget, preferred area, timeline and whether you plan to live or invest.</p></div><div class="step"><b>02</b><h3 data-en="Review a shortlist" data-ru="Изучите подборку">Review a shortlist</h3><p class="muted" data-en="Compare relevant options and request current availability and terms." data-ru="Сравните подходящие варианты и запросите актуальное наличие и условия.">Compare relevant options and request current availability and terms.</p></div><div class="step"><b>03</b><h3 data-en="Verify before purchase" data-ru="Проверьте перед покупкой">Verify before purchase</h3><p class="muted" data-en="Have documents, contracts and financial assumptions checked by qualified independent professionals." data-ru="Поручите проверку документов, договоров и финансовых расчётов независимым профильным специалистам.">Have documents, contracts and financial assumptions checked by qualified independent professionals.</p></div></div></div></section>
+<section id="contact" class="contact"><div class="wrap"><div class="section-head"><div class="eyebrow" data-en="Let's talk" data-ru="Давайте обсудим">Let's talk</div><h2 data-en="Tell us what you are looking for." data-ru="Расскажите, какую недвижимость вы ищете.">Tell us what you are looking for.</h2><p data-en="Send your preferred area, budget and purchase purpose. We will help you explore suitable options." data-ru="Напишите предпочтительный район, бюджет и цель покупки. Поможем рассмотреть подходящие варианты.">Send your preferred area, budget and purchase purpose. We will help you explore suitable options.</p></div>
+<div class="contact-box"><div><h3>THAI LIVING ESTATE</h3><p>Russian · English</p><strong>WhatsApp: +7 928 662-83-88</strong></div><a class="btn" href="https://wa.me/79286628388?text=Hello%20Thai%20Living%20Estate%2C%20I%27m%20interested%20in%20property%20in%20Phuket." target="_blank" rel="noopener" data-en="Message on WhatsApp" data-ru="Написать в WhatsApp">Message on WhatsApp</a></div>
+<p class="notice" data-en="Property details, availability, prices, ownership conditions and projected returns must be confirmed for each specific unit. This website is informational and does not constitute legal, tax or investment advice." data-ru="Характеристики, наличие, цены, условия собственности и прогнозы доходности необходимо подтверждать по каждому конкретному объекту. Сайт носит информационный характер и не является юридической, налоговой или инвестиционной консультацией.">Property details, availability, prices, ownership conditions and projected returns must be confirmed for each specific unit. This website is informational and does not constitute legal, tax or investment advice.</p></div></section>
+</main>
+<a class="btn mobile-cta" href="https://wa.me/79286628388" target="_blank" rel="noopener" data-en="Chat on WhatsApp" data-ru="Написать в WhatsApp">Chat on WhatsApp</a>
+<footer><div class="wrap footer-links"><span>© <span id="year"></span> Thai Living Estate · Phuket, Thailand</span><a href="#areas" data-en="Areas" data-ru="Районы">Areas</a><a href="#properties" data-en="Properties" data-ru="Объекты">Properties</a><a href="#contact" data-en="Contact" data-ru="Контакты">Contact</a></div><a href="/admin/" style="font-size:11px;opacity:.55">Admin</a></footer>
+<script>
+let current='en';const langButton=document.getElementById('lang');
+function setLanguage(next){current=next;document.documentElement.lang=next;document.querySelectorAll('[data-en]').forEach(el=>{el.textContent=el.dataset[next]});langButton.textContent=next==='en'?'RU':'EN';}
+langButton.addEventListener('click',()=>setLanguage(current==='en'?'ru':'en'));
+document.getElementById('year').textContent=new Date().getFullYear();
+
+async function loadProperties(){
+  const list=document.getElementById('property-list');
+  try{
+    const response=await fetch('/data/properties.json',{cache:'no-store'});
+    if(!response.ok) throw new Error('Could not load catalogue');
+    const data=await response.json();
+    const items=(data.properties||[]).filter(p=>p.published!==false);
+    if(!items.length){list.innerHTML='<p class="catalog-empty">New properties will appear here soon.</p>';return;}
+    list.innerHTML=items.map(p=>{
+      const area=(p.area||'').toLowerCase().replace(/\s+/g,'');
+      const areaKey=area.includes('bang')?'bangtao':(area.includes('layan')?'layan':'other');
+      const img=p.image||'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85';
+      const price=p.price?`฿${String(p.price).replace(/\B(?=(\d{3})+(?!\d))/g,',')}`:'Price on request';
+      const facts=[p.size?`${p.size} m²`:'',p.ownership||'',p.view||''].filter(Boolean);
+      const message=encodeURIComponent(`Hello Thai Living Estate, please send me details for ${p.title||'this property'} in ${p.area||'Phuket'}.`);
+      return `<article class="property-card" data-area="${areaKey}">
+        <img src="${img}" alt="${escapeHtml(p.title||'Phuket property')}" loading="lazy">
+        <div class="property-body">
+          <div class="property-top"><span class="tag">${escapeHtml((p.area||'PHUKET').toUpperCase())} · PHUKET</span><span class="status">${escapeHtml(p.status||'Availability to be confirmed')}</span></div>
+          <h3>${escapeHtml(p.title||'Phuket property')}</h3><div class="price">${escapeHtml(price)}</div>
+          <p class="muted">${escapeHtml(p.description||'Ask us for current details.')}</p>
+          <div class="facts">${facts.map(x=>`<span>${escapeHtml(x)}</span>`).join('')}</div>
+          <a class="btn" href="https://wa.me/79286628388?text=${message}" target="_blank" rel="noopener">Ask about this property</a>
+        </div></article>`;
+    }).join('');
+    document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b===btn));
+      document.querySelectorAll('.property-card').forEach(card=>card.hidden=btn.dataset.filter!=='all'&&card.dataset.area!==btn.dataset.filter);
+    }));
+    if(current==='ru') setLanguage('ru');
+  }catch(e){list.innerHTML='<p class="catalog-empty">The property catalogue is temporarily unavailable. Please contact us on WhatsApp.</p>';}
+}
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+loadProperties();
+
+</script>
+</body></html>

@@ -1,0 +1,28 @@
+{
+  "properties": [
+    {
+      "title": "Laya Resort Phuket · Studio",
+      "area": "Layan",
+      "price": 5000000,
+      "size": 25,
+      "ownership": "Freehold*",
+      "view": "Pool view",
+      "status": "Availability to be confirmed",
+      "description": "Previously discussed offer · pool view. Confirm exact unit, price and availability.",
+      "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85",
+      "published": true
+    },
+    {
+      "title": "Radisson · Studio",
+      "area": "Bang Tao",
+      "price": 4850000,
+      "size": 30,
+      "ownership": "Freehold*",
+      "view": "Studio",
+      "status": "Availability to be confirmed",
+      "description": "Previously discussed offer · Bang Tao area. Confirm exact unit, price and availability.",
+      "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85",
+      "published": true
+    }
+  ]
+}
