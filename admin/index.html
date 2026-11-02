@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thai Living Estate — Управление недвижимостью</title>
+<style>
+:root{--bg:#0b0e12;--panel:#131922;--panel2:#19222d;--line:#263241;--text:#edf2f7;--muted:#9aa8b8;--gold:#c7a56b;--gold2:#e0c18c;--green:#58c69a;--red:#e17d7d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:250px 1fr}
+aside{background:#0e131a;border-right:1px solid var(--line);padding:24px 16px;display:flex;flex-direction:column;gap:28px}
+.brand{padding:4px 10px}.brand b{letter-spacing:2px;font-size:14px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:3px;margin-top:7px}
+.nav{display:grid;gap:7px}.nav button{background:transparent;color:var(--muted);border:0;text-align:left;padding:13px 14px;border-radius:10px}.nav button.active,.nav button:hover{background:#202b38;color:var(--text)}.nav span{display:inline-block;width:28px;color:var(--gold)}
+.side-note{margin-top:auto;color:#748295;font-size:11px;line-height:1.6;padding:10px}
+main{min-width:0;padding:30px clamp(18px,4vw,54px) 60px}.top{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:30px}.eyebrow{color:var(--gold);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:800}.top h1{font-size:clamp(24px,3vw,34px);margin:7px 0 0}.top-actions{display:flex;gap:9px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:10px 15px;border-radius:9px}.btn.primary{background:var(--gold);border-color:var(--gold);color:#17130d;font-weight:800}.btn.subtle{background:transparent}.btn.danger{color:#ffaaaa;border-color:#633c42}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:22px}.stat,.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px}.stat{padding:17px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:25px;margin-top:7px}
+.panel{padding:20px;margin-bottom:18px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.panel h2{font-size:17px;margin:0}.muted{color:var(--muted)}.filters{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:10px}
+input,select,textarea{width:100%;background:#0d131b;border:1px solid #2b3949;color:var(--text);border-radius:8px;padding:11px 12px;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--gold)}label{display:block;color:#b5c0cc;font-size:12px;margin:0 0 7px}.field{margin-bottom:15px}textarea{min-height:105px;resize:vertical}
+.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:650px}th,td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line)}th{font-size:10px;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase}td{font-size:13px}.obj{display:flex;align-items:center;gap:11px}.thumb{width:54px;height:43px;object-fit:cover;border-radius:7px;background:#263241}.tag{display:inline-block;padding:5px 8px;border-radius:30px;background:#26372f;color:#9de0be;font-size:10px}.tag.off{background:#3b3030;color:#e5a4a4}
+.empty{padding:35px;text-align:center;color:var(--muted)}
+.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 15px}.wide{grid-column:1/-1}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}.tabs button{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:9px 13px}.tabs button.active{background:#273442;color:white;border-color:#536579}
+.photo-drop{border:1px dashed #526174;border-radius:12px;padding:22px;text-align:center;background:#0d131b}.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin-top:14px}.photo{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0d131b}.photo img{width:100%;height:110px;object-fit:cover;display:block}.photo button{position:absolute;top:6px;right:6px;background:#111b;color:white;border:1px solid #647386;border-radius:6px;padding:4px 7px}.photo small{display:block;padding:7px;color:var(--muted)}
+.preview{background:#0d131b;border:1px solid var(--line);border-radius:13px;overflow:hidden;max-width:540px}.preview img{width:100%;height:240px;object-fit:cover}.preview-body{padding:18px}.preview-price{font-size:25px;font-weight:800;color:var(--gold2);margin:9px 0}.hidden{display:none!important}.hint{font-size:11px;color:var(--muted);line-height:1.5}.toast{position:fixed;bottom:20px;right:20px;background:#1c342c;border:1px solid #38644f;color:#b5f1d2;padding:13px 17px;border-radius:10px;display:none;z-index:10}
+@media(max-width:900px){.app{grid-template-columns:1fr}aside{padding:13px 14px;gap:12px;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:3px 6px}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap;padding:10px}.side-note{display:none}main{padding:22px 15px 45px}.filters{grid-template-columns:1fr 1fr}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:21px}}
+@media(max-width:560px){.top{align-items:flex-start;flex-direction:column}.formgrid{grid-template-columns:1fr}.wide{grid-column:auto}.stats{grid-template-columns:repeat(3,1fr)}.filters{grid-template-columns:1fr 1fr}}
+</style></head>
+<body><div class="app">
+<aside><div class="brand"><b>THAI LIVING ESTATE</b><small>PROPERTY MANAGEMENT</small></div>
+<nav class="nav">
+<button class="active" data-view="dashboard"><span>▦</span>Обзор</button>
+<button data-view="catalog"><span>⌕</span>Каталог объектов</button>
+<button data-view="editor"><span>＋</span>Добавить объект</button>
+<button data-view="gallery"><span>▧</span>Фотогалерея</button>
+</nav><div class="side-note">Панель управления недвижимостью на Пхукете.<br>Черновики сохраняются в этом браузере.</div></aside>
+<main>
+<div class="top"><div><div class="eyebrow">Панель управления · Phuket</div><h1 id="pageTitle">Обзор</h1></div><div class="top-actions"><button class="btn subtle" id="importBtn">Импорт JSON</button><button class="btn primary" id="exportBtn">Экспорт каталога</button><input id="importFile" type="file" accept="application/json" class="hidden"></div></div>
+<section id="dashboard">
+<div class="stats"><div class="stat"><small>Всего объектов</small><strong id="statTotal">—</strong></div><div class="stat"><small>Опубликовано</small><strong id="statPublished">—</strong></div><div class="stat"><small>Скрыто</small><strong id="statHidden">—</strong></div></div>
+<div class="panel"><div class="panel-head"><h2>Быстрые действия</h2></div><p class="muted">Добавляй объекты, загружай фотографии, проверяй карточку перед публикацией.</p><button class="btn primary" onclick="newProperty()">＋ Добавить недвижимость</button> <button class="btn" onclick="showView('catalog')">Открыть каталог</button></div>
+<div class="panel"><div class="panel-head"><h2>Важно о сохранении</h2></div><p class="hint">Изменения пока сохраняются как черновики в этом браузере. Чтобы обновить публичный сайт, нажми «Экспорт каталога», затем замени файл data/properties.json в GitHub на экспортированный JSON и подтверди Commit changes. Прямое сохранение в GitHub ещё не подключено.</p></div>
+</section>
+<section id="catalog" class="hidden">
+<div class="panel"><div class="panel-head"><h2>Поиск и фильтры</h2><button class="btn primary" onclick="newProperty()">＋ Новый объект</button></div>
+<div class="filters"><input id="search" placeholder="Поиск по названию или ЖК"><select id="areaFilter"><option value="">Все районы</option><option>Layan</option><option>Bang Tao</option><option>Laguna</option><option>Kamala</option><option>Rawai</option><option>Other</option></select><select id="statusFilter"><option value="">Все статусы</option><option>В продаже</option><option>Забронировано</option><option>Продано</option><option>Наличие уточняется</option></select><select id="ownershipFilter"><option value="">Любая собственность</option><option>Freehold</option><option>Leasehold</option><option>Freehold*</option></select></div></div>
+<div class="panel table-wrap"><table><thead><tr><th>Объект</th><th>Район</th><th>Цена, THB</th><th>Площадь</th><th>Статус</th><th></th></tr></thead><tbody id="rows"></tbody></table><div id="noRows" class="empty hidden">По выбранным фильтрам ничего не найдено.</div></div>
+</section>
+<section id="editor" class="hidden">
+<div class="panel"><div class="panel-head"><h2 id="editorTitle">Новый объект</h2><div class="top-actions"><button class="btn" onclick="showView('catalog')">Отмена</button><button class="btn primary" id="saveBtn">Сохранить черновик</button></div></div>
+<div class="tabs"><button class="active" data-tab="details">Основное</button><button data-tab="photos">Фотографии</button><button data-tab="preview">Предпросмотр</button></div>
+<div id="tab-details"><div class="formgrid">
+<div class="field"><label>Название объекта / ЖК *</label><input id="title" placeholder="Например, Laya Resort Phuket"></div>
+<div class="field"><label>Район *</label><select id="area"><option>Layan</option><option>Bang Tao</option><option>Laguna</option><option>Kamala</option><option>Rawai</option><option>Other</option></select></div>
+<div class="field"><label>Цена (THB)</label><input id="price" type="number" min="0"></div>
+<div class="field"><label>Площадь (м²)</label><input id="size" type="number" min="0"></div>
+<div class="field"><label>Тип собственности</label><select id="ownership"><option>Freehold</option><option>Leasehold</option><option>Freehold*</option><option>Уточняется</option></select></div>
+<div class="field"><label>Вид / тип</label><input id="view" placeholder="Вид на бассейн, море, сад..."></div>
+<div class="field"><label>Статус</label><select id="status"><option>В продаже</option><option>Забронировано</option><option>Продано</option><option>Наличие уточняется</option></select></div>
+<div class="field"><label>Показывать на сайте</label><select id="published"><option value="true">Да</option><option value="false">Нет</option></select></div>
+<div class="field wide"><label>Краткое описание</label><textarea id="description" placeholder="Ключевые особенности объекта..."></textarea></div>
+</div></div>
+<div id="tab-photos" class="hidden"><div class="photo-drop"><b>Загрузить фотографии объекта</b><p class="hint">Можно выбрать несколько изображений. Первая фотография будет обложкой.</p><input id="photoFiles" type="file" accept="image/*" multiple></div><div class="photo-grid" id="photoGrid"></div><p class="hint">Фото в этой версии встраиваются в JSON при экспорте. Для большого количества фотографий лучше позже подключить отдельное хранилище изображений.</p></div>
+<div id="tab-preview" class="hidden"><div class="preview" id="previewCard"></div></div>
+</div>
+</section>
+<section id="gallery" class="hidden"><div class="panel"><div class="panel-head"><h2>Фотографии объектов</h2></div><p class="muted">Выбери объект в каталоге и открой вкладку «Фотографии», чтобы управлять его галереей. Главное фото используется в карточке сайта.</p><button class="btn" onclick="showView('catalog')">Перейти в каталог</button></div></section>
+</main></div><div class="toast" id="toast"></div>
+<script>
+const KEY='tle_admin_drafts_v1';let items=[];let editing=-1;let photos=[];let activeTab='details';
+const $=id=>document.getElementById(id);
+async function init(){try{const r=await fetch('/data/properties.json',{cache:'no-store'});if(!r.ok)throw 0;const d=await r.json();items=d.properties||[]}catch(e){items=[]}try{const draft=JSON.parse(localStorage.getItem(KEY)||'null');if(draft&&Array.isArray(draft.properties))items=draft.properties}catch(e){}render(); }
+function persist(){localStorage.setItem(KEY,JSON.stringify({properties:items}));stats();renderRows();toast('Черновик сохранён в этом браузере');}
+function toast(t){$('toast').textContent=t;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2600)}
+function showView(v){document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));$(v).classList.remove('hidden');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));$('pageTitle').textContent=({dashboard:'Обзор',catalog:'Каталог объектов',editor:editing<0?'Добавить объект':'Редактировать объект',gallery:'Фотогалерея'})[v];if(v==='catalog')renderRows();}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showView(b.dataset.view));
+function stats(){$('statTotal').textContent=items.length;$('statPublished').textContent=items.filter(x=>x.published!==false).length;$('statHidden').textContent=items.filter(x=>x.published===false).length}
+function render(){stats();renderRows()}
+function renderRows(){const q=($('search')?.value||'').toLowerCase(),a=$('areaFilter')?.value||'',s=$('statusFilter')?.value||'',o=$('ownershipFilter')?.value||'';const filtered=items.map((p,i)=>({...p,_i:i})).filter(p=>(!q||p.title.toLowerCase().includes(q))&&(!a||p.area===a)&&(!s||p.status===s)&&(!o||p.ownership===o));$('rows').innerHTML=filtered.map(p=>`<tr><td><div class="obj"><img class="thumb" src="${p.image||''}"><b>${esc(p.title)}</b></div></td><td>${esc(p.area)}</td><td>${Number(p.price||0).toLocaleString('en-US')}</td><td>${p.size||'—'} м²</td><td><span class="tag ${p.published===false?'off':''}">${esc(p.status||'Не указан')}</span></td><td><button class="btn" onclick="editProperty(${p._i})">Открыть</button></td></tr>`).join('');$('noRows').classList.toggle('hidden',filtered.length>0)}
+['search','areaFilter','statusFilter','ownershipFilter'].forEach(id=>$(id).addEventListener('input',renderRows));
+function newProperty(){editing=-1;photos=[];fill({title:'',area:'Layan',price:'',size:'',ownership:'Freehold',view:'',status:'В продаже',published:true,description:'',image:'',gallery:[]});$('editorTitle').textContent='Новый объект';showView('editor');switchTab('details')}
+function editProperty(i){editing=i;const p=items[i];photos=p.gallery||[];if(!photos.length&&p.image)photos=[p.image];fill(p);$('editorTitle').textContent='Редактировать объект';showView('editor');switchTab('details')}
+function fill(p){['title','area','price','size','ownership','view','status','description'].forEach(k=>$(k).value=p[k]??'');$('published').value=String(p.published!==false);renderPhotos();updatePreview()}
+function readForm(){return {title:$('title').value.trim(),area:$('area').value,price:Number($('price').value)||0,size:Number($('size').value)||0,ownership:$('ownership').value,view:$('view').value.trim(),status:$('status').value,description:$('description').value.trim(),published:$('published').value==='true',image:photos[0]||'',gallery:photos}}
+$('saveBtn').onclick=()=>{const p=readForm();if(!p.title){toast('Укажи название объекта');return}if(editing<0)items.unshift(p);else items[editing]=p;editing=items.indexOf(p);persist();$('editorTitle').textContent='Редактировать объект';showView('catalog')};
+function switchTab(t){activeTab=t;document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));['details','photos','preview'].forEach(x=>$('tab-'+x).classList.toggle('hidden',x!==t));if(t==='preview')updatePreview()}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
+$('photoFiles').onchange=async e=>{for(const f of e.target.files){if(!f.type.startsWith('image/'))continue;const data=await new Promise(res=>{const rd=new FileReader();rd.onload=()=>res(rd.result);rd.readAsDataURL(f)});photos.push(data)}renderPhotos();updatePreview();e.target.value=''};
+function renderPhotos(){$('photoGrid').innerHTML=photos.map((src,i)=>`<div class="photo"><img src="${src}"><button onclick="removePhoto(${i})">×</button><small>${i===0?'Обложка':'Фото '+(i+1)}</small></div>`).join('')}
+function removePhoto(i){photos.splice(i,1);renderPhotos();updatePreview()}
+function updatePreview(){const p=readForm();$('previewCard').innerHTML=`<img src="${photos[0]||'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80'}"><div class="preview-body"><span class="tag">${esc(p.area)}</span><h2>${esc(p.title||'Название объекта')}</h2><div class="preview-price">฿${p.price.toLocaleString('en-US')}</div><p class="muted">${p.size||'—'} м² · ${esc(p.ownership)} · ${esc(p.view)}</p><p>${esc(p.description)}</p><small class="muted">${esc(p.status)}</small></div>`}
+['title','area','price','size','ownership','view','status','description','published'].forEach(id=>$(id).addEventListener('input',()=>{if(activeTab==='preview')updatePreview()}));
+$('exportBtn').onclick=exportData;function exportData(){const blob=new Blob([JSON.stringify({properties:items},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='properties.json';a.click();URL.revokeObjectURL(a.href);toast('Файл properties.json подготовлен')}
+$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=async e=>{try{const d=JSON.parse(await e.target.files[0].text());if(!Array.isArray(d.properties))throw 0;items=d.properties;persist();toast('Каталог импортирован')}catch(err){toast('Не удалось прочитать JSON')};e.target.value=''};
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+init();
+</script></body></html>
