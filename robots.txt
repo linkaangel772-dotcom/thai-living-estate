@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://superlative-blini-c65210.netlify.app/sitemap.xml
